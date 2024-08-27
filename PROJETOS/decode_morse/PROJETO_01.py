@@ -1,3 +1,17 @@
+'''
+Python for Data Engineer
+## Projeto 01 ##  
+
+Desenvolvido por :
+    - Klinsmann Ferreira de Sousa
+    - Renan Yudi Hamada Nunes
+    - Tiago da Silva Pimentel
+    - Victor Camargo Gonçalves
+
+DATA: 20/08/2024
+'''
+
+
 import os
 import sys
 import datetime
@@ -11,7 +25,7 @@ def decode_morse (msg):
     x = len(palavras)
     y=0
     
-    for palavra in palavras:
+    for palavra in palavras:    #cada letra em palavra
         letra = palavra.split(" ")
         for letra_dict in letra:
             letra_dict = dict_morse.get(letra_dict)
