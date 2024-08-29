@@ -1,0 +1,2 @@
+INFO:root:Inicio da execução : 2024-08-28 19:27:12.067432
+INFO:root:Inicio da execucao : 2024-08-28 19:27:24.602186
