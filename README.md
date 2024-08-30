@@ -1,23 +1,20 @@
-# learn-python
+# Proejeto 02
 
-Repositório destinado ao ensino da linguagem python para iniciantes.
+desenvolvido por :
+- Klinsmann Ferreira de Sousa
+- Renan Yudi Hamada Nunes
+- Tiago da Silva Pimentel
+- Victor Camargo Gonçalves
 
-<img src="imgs/python.jpg" style="max-width:1000px; "/>
+Em 30/08/2024
 
 
-### Conteúdo
+### Organização do projeto
 ---
-1. Fundamentos
-2. Pandas
-3. Visualização de Dados
-4. Análise de Dados
-5. Ingestão de dados
+dentro da pasta ``PROJETOS`` temos o projeto `db-pipeline` contendo:
 
-### Organização do repositório
----
-O repositório está organizado da seguinte forma
-- DESAFIOS : pequenos desafios de programação para testar suas habilidades de código e raciocínio lógico ;
-- NOTEBOOKS : notebooks com exemplos dos conteúdos abordados ;
-- PROJETOS : aplicação dos conteúdos abordados em pequenos projetos. 
+- app.py - seria o arquivo main, contendo a logica principal do projeto;
+- assests/utils.py - possui funções auxiliares;
+- data/NyflightsDB - é o nosso banco de dados SQLite;
 
-As imagens utilizadas nos notebooks foram extraídas de: https://pythoniluminado.netlify.app
+Basicamente o projeto consiste em baixar dados de vôos de um repositorio .csv, realizar algumas transformações e salvar como tabela no banco SQLite.
