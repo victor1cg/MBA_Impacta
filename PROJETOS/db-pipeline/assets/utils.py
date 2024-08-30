@@ -4,7 +4,7 @@ import logging
 import datetime
 
 
-logging.basicConfig(filename='data/flights_pipe_log.log', level=logging.INFO)
+logging.basicConfig(filename='flights_pipe_log.log', level=logging.INFO)
 logger = logging.getLogger()
 
 def read_metadado(meta_path):
@@ -42,7 +42,8 @@ def select_rename(df, cols_originais, cols_renamed):
     INPUT: Pandas DataFrame, lista dos nomes das colunas e lista dos novos nomes 
     OUTPUT: Pandas DataFrame com novos nomes
     '''
-    df_work = df.loc[:, cols_originais].copy()
+    # df_work = df.loc[:, cols_originais].copy() # se fizer o slice aqui ele retira a coluna data_voo
+    df_work = df.copy()
     columns_map = dict(zip(cols_originais,cols_renamed))
     df_work.rename(columns=columns_map, inplace = True)
     return df_work
@@ -57,7 +58,7 @@ def convert_data_type(df, tipos_map):
     for col in tipos_map.keys():
         tipo = tipos_map[col]
         if tipo == "int":
-            tipo = data[col].astype(int)
+            data[col] = data[col].astype(int)
         elif tipo == "float":
             data[col] = data[col].astype(float)
         elif tipo == "datetime":
@@ -96,11 +97,18 @@ def null_check(df, null_tolerance):
             
 def keys_check(df, cols_chaves):
     '''
-    Função ???????????????????????????
-    INPUT: ???????????????????????????
-    OUTPUT: ???????????????????????????
+    Função : basta saber se o campo(s) chave(s) possuem a mesma quantidade de observações únicos em relação a quantidade de observações da base
+    INPUT: Coluna [KEY] do work_metadado.xlsx
+    OUTPUT: 
     '''
-    pass
+    x = len(df)
+    for col in cols_chaves:
+        if  len(df[col]) == x :
+            pass
+        else : 
+            logger.info(f'checagem da coluna chave {col} apresenta erro')
+     
+    return 
 
 # Funções auxiliares -------------------------------------------
 
