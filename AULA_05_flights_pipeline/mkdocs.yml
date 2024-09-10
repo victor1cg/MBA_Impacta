@@ -1,0 +1,8 @@
+site_name: DE05-Python
+
+nav:
+  - Home: index.md
+  - Cleansing: cleansing.md
+
+plugins: 
+  - mkdocstrings
